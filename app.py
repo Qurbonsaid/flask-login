@@ -1,5 +1,7 @@
 """Flask Login Example and instagram fallowing find"""
 
+import os
+
 from flask import Flask, url_for, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
 
@@ -70,4 +72,4 @@ def logout():
 if __name__ == '__main__':
     db.create_all()
     app.secret_key = "123"
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=os.getenv('PORT'))
